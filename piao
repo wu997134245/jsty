@@ -1,0 +1,18 @@
+vop = $('div.voteTxt div.voteName.clearfix:first-child span');
+numlist = [];
+for (n=0;n<vop.length;n++ ) {numlist.push(parseInt(vop[n].innerHTML))};
+function numpx(secArray) {
+var len = secArray.length,
+empty;
+for(var k=0; k<len-1; k++) {
+for(var i=0; i<len-k-1; i++) {
+if(secArray[i]>secArray[i+1]) {
+empty = secArray[i+1];
+secArray[i+1] = secArray[i];
+secArray[i] = empty
+}
+}
+}
+return secArray;
+}
+console.log(numpx(numlist).reverse());
